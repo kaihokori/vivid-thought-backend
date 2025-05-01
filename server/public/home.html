@@ -1,0 +1,131 @@
+<!-- home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;"
+    />
+    <title>Vivid Thought</title>
+    <link rel="stylesheet" href="styles/universal.css" />
+    <link rel="stylesheet" href="styles/home.css" />
+    <script src="scripts/flow.js" defer></script>
+  </head>
+  <body>
+    <div class="background-blobs">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+      <div class="blob blob3"></div>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo-container">
+      <img src="assets/icons/logo.svg" alt="Vivid Thought Logo" class="logo" />
+    </div>
+
+    <!-- Grid Wrapper -->
+    <div class="grid-wrapper">
+      <div class="parent">
+        <div class="div1">
+          <p class="large one" style="margin: 10px 0">Spaces</p>
+          <p class="large two" style="margin: 10px 0">Reminders</p>
+          <div class="scrollable one"></div>
+          <div class="scrollable two"></div>
+          <a class="alt one">
+            <div>
+              <img src="assets/icons/plus.svg" alt="Add Icon" />
+            </div>
+            Join or Create Space
+          </a>
+          <a class="alt two">
+            <div>
+              <img src="assets/icons/plus.svg" alt="Add Icon" />
+            </div>
+            Create Reminder
+          </a>
+        </div>
+        <div class="div2 hidden">
+          <div class="top-bar">
+            <p class="large one"></p>
+            <a class="one" style="border: none">
+              <img src="assets/icons/share.svg" alt="Share Icon" />
+            </a>
+            <p class="large two" style="margin: 10px 0">Shared Files</p>
+          </div>
+          <div class="scrollable one"></div>
+          <div class="scrollable two"></div>
+          <a class="alt one">
+            <div>
+              <img src="assets/icons/plus.svg" alt="Add Icon" />
+            </div>
+            Create Thread
+          </a>
+          <a class="alt two">
+            <div>
+              <img src="assets/icons/plus.svg" alt="Add Icon" />
+            </div>
+            Create File
+          </a>
+        </div>
+        <div class="div3 hidden">
+          <div class="top-bar">
+            <p class="large" id="thread-title"></p>
+            <a class="one" id="workspace-button">
+              <img src="assets/icons/workspace.svg" alt="Workspace Icon" />
+              Workspace
+            </a>
+            <a class="two" id="return-button">
+              <img src="assets/icons/left.svg" alt="Left Icon" />
+              Return
+            </a>
+          </div>
+          <div class="scrollable">
+            <div class="chat-content" id="chat-scroll"></div>
+          </div>
+          <div class="bottom-bar">
+            <input
+              type="text"
+              placeholder="Type something..."
+              class="input-box"
+            />
+            <a id="poke-button">
+              <img src="assets/icons/poke.svg" alt="Poke Icon" />
+              Poke
+            </a>
+            <a>
+              <img src="assets/icons/send.svg" alt="Send Icon" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="overlay" class="hidden">
+      <div class="modal">
+        <div id="close-overlay" class="close-btn">
+          <img src="assets/icons/close.svg" alt="Close" />
+        </div>
+        <div id="overlay-content"></div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
+    <script defer src="scripts/app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        if (!verifyToken()) {
+          window.location.href = "login.html";
+        }
+      });
+    </script>
+    <script src="scripts/data/spaces.js"></script>
+    <script src="scripts/data/threads.js"></script>
+    <script src="scripts/data/messages.js"></script>
+    <script src="scripts/data/files.js"></script>
+    <script src="scripts/data/reminders.js"></script>
+    <script src="scripts/populate.js"></script>
+  </body>
+</html>

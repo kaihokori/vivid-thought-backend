@@ -1,0 +1,393 @@
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  margin-top: 50px;
+}
+
+.logo {
+  height: 80px;
+}
+
+.grid-wrapper {
+  padding: 30px;
+  height: calc(100vh - 110px);
+  box-sizing: border-box;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 2fr;
+  grid-template-rows: 1fr;
+  gap: 30px;
+  height: 100%;
+}
+
+.div1,
+.div2,
+.div3 {
+  background-color: var(--background);
+  border-radius: 15px;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.div2 .scrollable a {
+  margin: 5px 0;
+  border: none;
+}
+
+.div2 .scrollable a p {
+  /* margin: 10px 0; */
+  padding: 0;
+  width: 100%;
+}
+
+.div3 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.scrollable {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-content {
+  margin-top: auto; /* Push content to the bottom */
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-bar {
+  display: flex;
+  gap: 10px;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.div2 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.alt {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  border: none;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.alt.fill {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.alt.fill:first-child {
+  margin-top: 0;
+}
+
+.alt.fill:last-child {
+  margin-bottom: 0;
+}
+
+.alt div {
+  background-color: var(--surface);
+  border-radius: 15px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.alt.fill div {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.alt div img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.alt.fill div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.file {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+}
+
+.file p {
+  width: 100%;
+}
+
+.reminder {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+  border: none;
+  margin: 10px 0;
+}
+
+.reminder div:nth-child(2) {
+  width: 100%;
+}
+
+.reminder:first-child {
+  margin-top: 0;
+}
+.reminder:last-child {
+  margin-bottom: 0;
+}
+
+.circle {
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--text);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.circle.checked {
+  background-color: var(--text);
+}
+
+input {
+  flex-grow: 1;
+  padding: 10px 20px;
+  border: 2px solid var(--text);
+  border-radius: 15px;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: var(--text);
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+}
+
+.scrollable {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin: 10px 0;
+}
+
+.scrollable {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+.date {
+  text-align: center;
+  width: 100%;
+  margin: 40px 0 10px;
+}
+
+.message {
+  border: 2px solid var(--text);
+  background-color: var(--background);
+  border-radius: 15px;
+  padding: 10px;
+  margin: 20px 0;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.message img {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+.message p {
+  margin: 5px;
+}
+
+.message.you {
+  margin-left: auto;
+  align-items: flex-end;
+}
+
+.message.you p {
+  text-align: right;
+}
+
+.poke {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: var(--surface);
+  border-radius: 15px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.close-btn img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.modal {
+  position: relative;
+  background-color: var(--background);
+  padding: 50px 80px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  text-align: center;
+  width: 500px;
+}
+
+.modal p {
+  width: 100%;
+}
+
+.modal p.large {
+  margin: 10px 0;
+}
+
+.modal p.small {
+  margin-bottom: 40px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.input-group {
+  position: relative;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 30px 18px 10px;
+  border: 2px solid var(--text);
+  border-radius: 15px;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+}
+
+.input-group input::placeholder {
+  color: transparent;
+}
+
+.input-group label {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 0.8rem;
+  color: var(--text);
+  background-color: var(--background);
+  padding: 0 5px;
+  pointer-events: none;
+  transition: 0.2s ease all;
+}
+
+input[type="date"] {
+  color: var(--text);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.centered-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid var(--surface);
+  margin: 30px 0;
+  width: 100%;
+}
+
+.reminder .circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  margin-right: 10px;
+}
+
+.circle.checked {
+  background-color: var(--text);
+  border: 2px solid var(--text);
+}

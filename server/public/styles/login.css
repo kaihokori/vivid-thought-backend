@@ -1,0 +1,71 @@
+.logo {
+  width: 70px;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+a {
+  margin: 5px 0;
+}
+
+a:first-of-type {
+  margin-top: 20px;
+}
+
+button {
+  margin-bottom: 7px;
+	display: flex;
+  padding: 10px 20px;
+  background-color: var(--background);
+  border: 2px solid var(--text);
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+  font-size: 1.2rem;
+  cursor: pointer;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-group {
+  position: relative;
+  margin: 10px 0;
+  max-width: 100%;
+  width: 400px;
+}
+
+.input-group:first-of-type {
+  margin-top: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 30px 18px 10px;
+  border: 2px solid var(--text);
+  border-radius: 15px;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+}
+
+.input-group input::placeholder {
+  color: transparent;
+}
+
+.input-group label {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 0.8rem;
+  color: var(--text);
+  background-color: var(--background);
+  padding: 0 5px;
+  pointer-events: none;
+  transition: 0.2s ease all;
+}
+
+.message {
+  margin: 20px 0;
+}

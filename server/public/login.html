@@ -1,0 +1,47 @@
+<!-- login.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vivid Thought</title>
+    <link rel="stylesheet" href="styles/universal.css" />
+    <link rel="stylesheet" href="styles/login.css" />
+  </head>
+  <body>
+    <div class="background-blobs">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+      <div class="blob blob3"></div>
+    </div>
+    <div class="centre-vh">
+      <img src="assets/icons/logo.svg" alt="Vivid Thought Logo" class="logo" />
+      <p class="large">Welcome to Vivid Thought!<br /></p>
+      <p class="small">Please login to continue.<br /></p>
+      <br/>
+      <div class="input-group">
+        <input type="text" id="loginEmail" required />
+        <label for="loginEmail">Email</label>
+      </div>
+      <div class="input-group">
+        <input type="password" id="loginPassword" required />
+        <label for="loginPassword">Password</label>
+      </div>
+      <p id="message"></p>
+      <br/>
+      <a onclick="login()">Login</a>
+      <a href="register.html">Create a New Account</a>
+      <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+      <script defer src="scripts/app.js"></script>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        if (verifyToken()) {
+          window.location.href = "home.html";
+        }
+      });
+    </script>  
+  </body>
+</html>
